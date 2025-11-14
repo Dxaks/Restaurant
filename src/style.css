@@ -1,3 +1,43 @@
 body {
-    background-color: rgb(161, 91, 91);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: whitesmoke;
 }
+
+header {
+    width: 100%;
+}
+
+header > nav {
+    width: 100%;
+    background-color: blue;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav button {
+    width: 7rem;
+    height: 2.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+
+}
+
+#content {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    width: 80%;
+    height: 100vh;
+    /* background-image: url(./images/home_backgroung_1.jpeg); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
