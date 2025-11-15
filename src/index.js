@@ -1,4 +1,4 @@
 import './style.css';
-import { testing } from './logic.js';
+import { changeBackgroundImageOnHover } from './logic';
 
-console.log(testing);
+changeBackgroundImageOnHover()

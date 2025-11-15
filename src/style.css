@@ -33,11 +33,16 @@ nav button {
     position: absolute;
     top: 0;
     z-index: -1;
-    width: 80%;
+    width: 60%;
     height: 100vh;
-    /* background-image: url(./images/home_backgroung_1.jpeg); */
+    background-image: url(./images/home_image_1.jpeg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+}
+
+#content img {
+    object-fit: cover;
+    width: 50%;
 }
 
