@@ -1,4 +1,10 @@
 import './style.css';
-import { changeBackgroundImageOnHover } from './logic';
+import './menu.css';
+import { changeBackgroundImageOnHover } from './home_page';
+import { displayFood } from './menu';
+import { Restaurant } from './menu';
 
-changeBackgroundImageOnHover()
+
+// changeBackgroundImageOnHover()
+
+displayFood(Restaurant.foodStore)
