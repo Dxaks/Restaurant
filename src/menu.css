@@ -5,14 +5,14 @@
 .content_menu {
     display: grid;
     /* grid-template-columns: repeat(auto-fit, minmax(200px, 30%)); */
-    grid-template-columns: repeat(auto-fit, minmax(30%, 2fr) );
+    grid-template-columns: repeat(auto-fit, minmax(30%, 2fr));
     gap: 20px;
-    background-color: blueviolet;
+    background-color: whitesmoke;
 }
 
 .food_card {
     min-height: 200px;
-    background-color: brown;
+    background-color: white;
 }
 
 .food_card {
@@ -20,6 +20,25 @@
     grid-template-columns: 2fr 1fr;
 }
 
-.food_card div:nth-child(2) {
-    background-color: black;
+.food_card div:nth-child(1) {
+    padding: 15px 10px 0 20px;
+}
+
+.food_card div:nth-child(1) > * {
+    padding-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.food_card div:nth-child(1) p:nth-child(3) {
+    padding-bottom: 0;
+    padding-top: 15px;
+    font-size: 2.0rem;
+}
+
+.food_card div:nth-child(2) img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    object-position: center;
+    aspect-ratio: 1;
 }

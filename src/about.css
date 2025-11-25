@@ -1,0 +1,37 @@
+.employees {
+    display: grid;
+    grid-auto-rows: minmax(200px, 250px);
+    gap: 20px;
+    padding: 20px;
+    background-color: brown;
+}
+
+.employees .employee_details {
+    background-color: aliceblue;
+    max-width: 40%;
+    margin: 15px 0 0 30px;
+    padding: 20px 0 20px 0;
+    border-radius: 20px;
+}
+
+.employees .employee_details {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.employee_details div:nth-child(1) {
+    padding: 15px 10px 0 20px;
+
+}
+
+.employee_details div:nth-child(1) > * {
+    padding-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.employee_details div:nth-child(2) {
+    left: -30px;
+    background-color: black;
+    border-radius: 50%;
+    /* height: 70%; */
+}

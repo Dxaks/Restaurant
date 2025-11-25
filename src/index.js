@@ -1,10 +1,38 @@
 import './style.css';
 import './menu.css';
-import { changeBackgroundImageOnHover } from './home_page';
-import { displayFood } from './menu';
-import { Restaurant } from './menu';
+import './about.css';
+
+import { renderHomePageDetails } from './home_page';
+import { renderFoodObject } from './menu';
+import { FoodStore } from './menu';
+import { Employee, renderEmployee } from './about';
 
 
-// changeBackgroundImageOnHover()
 
-displayFood(Restaurant.foodStore)
+// renderHomePageDetails()
+
+// renderFoodObject(FoodStore.getFoodStore)
+
+// renderEmployee(Employee.getEmployees);
+
+const renderSiteDisplay = () => {
+
+    const navBar = document.querySelectorAll('button');
+
+    navBar.forEach((button) => {
+        button.addEventListener('click', (e) => {
+        e.preventDefault;
+
+            if(e.target === navBar[0]) {
+                renderHomePageDetails()   
+            } else if(e.target === navBar[1]) {
+                renderFoodObject(FoodStore.getFoodStore)
+            } else {
+                renderEmployee(Employee.getEmployees); 
+            }
+        })
+    })  
+}
+
+renderSiteDisplay();
+

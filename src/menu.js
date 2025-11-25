@@ -1,6 +1,13 @@
 // menu page
 
-export class Restaurant {
+import { my_food_image_1 } from "./imageImport";
+import { clearDOM } from "./home_page";
+
+const my_food_imges = {
+    tuwo: my_food_image_1,
+}
+
+export class FoodStore {
 
      static #store = []
 
@@ -11,67 +18,73 @@ export class Restaurant {
         this.id = id;
     }
 
-    static addFood(food_Obj) {
-        return this.#store.push(food_Obj);
+    static addFood(foodObject) {
+        return this.#store.push(foodObject);
     }
 
-    static get foodStore() {
-        return Restaurant.#store;
+    static get getFoodStore() {
+        return FoodStore.#store;
     }
 }
 
 
-function addFoodToRestaurant(name, description, price, id) {
-    const food = new Restaurant(name, description, price, id)
-        Restaurant.addFood(food)
+function addFoodToFoodStore(name, description, price, id) {
+    const food = new FoodStore(name, description, price, id)
+        FoodStore.addFood(food)
 }
 
-addFoodToRestaurant('name', 'whatever', 200, 'image_url');
-addFoodToRestaurant('name', 'whatever', 200, 'image_url');
-addFoodToRestaurant('name', 'whatever', 200, 'image_url');
-addFoodToRestaurant('name', 'whatever', 200, 'image_url');
-addFoodToRestaurant('name', 'whatever', 200, 'image_url');
-addFoodToRestaurant('name', 'whatever', 200, 'image_url');
+addFoodToFoodStore('name', 'whatever', 200, my_food_imges.tuwo);
+addFoodToFoodStore('name', 'whatever', 200, my_food_imges.tuwo);
+addFoodToFoodStore('name', 'whatever', 200, my_food_imges.tuwo);
+addFoodToFoodStore('name', 'whatever', 200, my_food_imges.tuwo);
+addFoodToFoodStore('name', 'whatever', 200, my_food_imges.tuwo);
+addFoodToFoodStore('name', 'whatever', 200, my_food_imges.tuwo);
+addFoodToFoodStore('name', 'whatever', 200, my_food_imges.tuwo);
+addFoodToFoodStore('name', 'whatever', 200, my_food_imges.tuwo);
+addFoodToFoodStore('name', 'whatever', 200, my_food_imges.tuwo);
+addFoodToFoodStore('name', 'whatever', 200, my_food_imges.tuwo);
+addFoodToFoodStore('name', 'whatever', 200, my_food_imges.tuwo);
 
 
-export function displayFood(food_details) {
+export function renderFoodObject(foodDetails) {
 
     const contentDiv = document.getElementById('content')
-    contentDiv.classList.add('content_menu')
+    clearDOM(contentDiv);
 
-    food_details.forEach(food => {
+    contentDiv.className = 'content_menu';
+
+    foodDetails.forEach(food => {
         const foodCard = document.createElement('div');
         foodCard.classList.add('food_card');
 
-        const food_card_details = document.createElement('div');
-        const food_card_image = document.createElement('div');
+        const foodCardDetails = document.createElement('div');
+        const foodCardImage = document.createElement('div');
 
-        foodCard.appendChild(food_card_details);
-        foodCard.appendChild(food_card_image);
+        foodCard.appendChild(foodCardDetails);
+        foodCard.appendChild(foodCardImage);
 
-        const food_name = document.createElement('p');
-        const food_description = document.createElement('p');
-        const food_price = document.createElement('p');
+        const foodName = document.createElement('p');
+        const foodDescription = document.createElement('p');
+        const foodPrice = document.createElement('p');
 
-        food_card_details.appendChild(food_name);
-        food_card_details.appendChild(food_description);
-        food_card_details.appendChild(food_price);
+        foodCardDetails.appendChild(foodName);
+        foodCardDetails.appendChild(foodDescription);
+        foodCardDetails.appendChild(foodPrice);
 
         const image = document.createElement('img');
+        image.dataset.image = food.id;
 
-        food_card_image.appendChild(image);
+        foodCardImage.appendChild(image);
 
-        food_name.textContent = food.name;
-        food_description.textContent = food.description;
-        food_price.textContent = food.price;
+        foodName.textContent = food.name;
+        foodDescription.textContent = food.description;
+        foodPrice.textContent = `N${food.price}`;
+        image.src = food.id;
 
         contentDiv.appendChild(foodCard);
     });
 }
 
 
-
-
-
-
+console.log('hiiiiiiiiiiiiiiiiiiiiiiii')
 
