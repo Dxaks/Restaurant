@@ -1,6 +1,6 @@
 import { myBgImage1 } from "./imageImport";
+import { svgObject } from "./imageImport";
 
-// func. that set the background_image and text on Home page.
 function renderHomePageDetails() {
 
         const contentDiv = document.getElementById('content');
@@ -10,8 +10,6 @@ function renderHomePageDetails() {
 
         contentDiv.style.backgroundImage = `url(${myBgImage1})`;
 
-        function addTextToDiv(div) {
-
             const h1 = document.createElement('h1');
             const h2 = document.createElement('h2');
             const h3 = document.createElement('h3');
@@ -20,14 +18,13 @@ function renderHomePageDetails() {
             h2.textContent = 'We Make Local & Fast Food, Launch, and Event Food';
             h3.textContent = 'Add: Ahmadu Bello Memorial Stadium Gus. Nig.';
 
-            div.appendChild(h1);
-            div.appendChild(h2);
-            div.appendChild(h3);
-        }
-   
-    addTextToDiv(contentDiv)
+            contentDiv.appendChild(h1);
+            contentDiv.appendChild(h2);
+            contentDiv.appendChild(h3);
+            
+            addSvg('.content_home', 'div')    
 }
-
+   
 
 function clearDOM(div) {
     div.innerHTML = '';
@@ -36,4 +33,26 @@ function clearDOM(div) {
     }
 }
 
-export {renderHomePageDetails, clearDOM}
+function addSvg(containerPosition, containerName) {
+
+    const position = document.querySelector(containerPosition);
+    console.log(containerPosition)
+    const element = document.createElement(containerName);
+
+    for (let image in svgObject) {
+        element.innerHTML += svgObject[image];
+    }
+    position.appendChild(element);
+    console.log(element)
+}
+
+function firstRender() {
+    document.addEventListener('DOMContentLoaded', () => {
+        renderHomePageDetails();
+        addSvg('body', 'footer');
+    })
+}
+
+firstRender()
+
+export { renderHomePageDetails, clearDOM, addSvg }

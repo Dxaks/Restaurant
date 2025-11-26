@@ -11,7 +11,8 @@ body {
 }
 
 header {
-    max-width: 100%;
+    position: fixed;
+    width: 90%;
 }
 
 header > nav {
@@ -41,6 +42,7 @@ nav button {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 20px;
     background-image: url(./images/home_image_1.png);
     background-position: center;
     background-repeat: no-repeat;
@@ -59,6 +61,16 @@ nav button {
     font-size: 0.5rem;
 }
 
+.content_home div {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+.content_home div svg {
+    width: 2.5rem;
+}
+
 .content_home > * {
     color: blue;
     background-color: whitesmoke;
@@ -67,3 +79,24 @@ nav button {
     width: 100%;
 }
 
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 90%;
+    margin: 0 auto;
+    background-color: white;
+    padding: 1.5rem 0;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+}
+
+svg {
+    width: 3rem;
+    fill: blue;
+    cursor: pointer;
+}

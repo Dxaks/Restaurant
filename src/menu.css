@@ -1,10 +1,9 @@
 .content_menu {
-    padding: 20px;    
+    padding: 120px 20px 120px 20px;    
 }
 
 .content_menu {
     display: grid;
-    /* grid-template-columns: repeat(auto-fit, minmax(200px, 30%)); */
     grid-template-columns: repeat(auto-fit, minmax(30%, 2fr));
     gap: 20px;
     background-color: whitesmoke;
@@ -13,6 +12,7 @@
 .food_card {
     min-height: 200px;
     background-color: white;
+    border: 1px solid;
 }
 
 .food_card {
