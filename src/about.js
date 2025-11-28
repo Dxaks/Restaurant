@@ -42,7 +42,7 @@ export function renderEmployee(employees) {
             card.classList.add('employee_details');
 
             const employeeCard = document.createElement('div');
-            const employeeImage = document.createElement('div')
+            const employeeImage = document.createElement('div');
 
             card.appendChild(employeeCard);
             card.appendChild(employeeImage);
@@ -64,6 +64,13 @@ export function renderEmployee(employees) {
             employeeContact.textContent = employee.contact;
 
             contentDiv.appendChild(card);
-
     });
+
+     const contactUs = document.createElement('div');
+            contactUs.classList.add('contact_us');
+            const contactUsBtn = document.createElement('button')
+            contactUsBtn.textContent = 'Contact Us';
+            contactUs.appendChild(contactUsBtn)
+
+        contentDiv.appendChild(contactUs);
 }

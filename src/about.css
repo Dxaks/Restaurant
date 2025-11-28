@@ -1,15 +1,14 @@
 .employees {
     display: grid;
-    grid-auto-rows: minmax(200px, 250px);
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
     padding: 120px 20px 120px 20px;
-    background-color: brown;
 }
 
 .employees .employee_details {
     position: relative;
-    background-color: aliceblue;
-    max-width: 40%;
+    background-color: white;
+    max-width: 70%;
     margin: 15px 0 0 30px;
     padding: 20px 0 20px 0;
     border-radius: 20px;
@@ -35,4 +34,29 @@
     right: -80px;
     background-color: black;
     border-radius: 50%;
+}
+
+.employees .contact_us {
+    grid-column: 2 / 3;
+    grid-row: 1 / 4;
+    border-left: 3px solid;
+    background-color: white;
+}
+
+.employees .contact_us {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.contact_us button {
+    width: 80%;
+    padding: 20px 0;
+    color: whitesmoke;
+    font-size: larger;
+    font-style: oblique;
+    background-color: blue;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
 }
