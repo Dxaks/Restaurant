@@ -69,8 +69,76 @@ export function renderEmployee(employees) {
      const contactUs = document.createElement('div');
             contactUs.classList.add('contact_us');
             const contactUsBtn = document.createElement('button')
+            contactUsBtn.classList.add('contactBtn');
             contactUsBtn.textContent = 'Contact Us';
             contactUs.appendChild(contactUsBtn)
 
         contentDiv.appendChild(contactUs);
+}
+
+// ..........................contact_form................................//
+
+export function renderDialogForm() {
+    const dialogbox = document.createElement('dialog');
+
+    const formElement = document.createElement('form');
+    formElement.setAttribute('formmethod', 'dialog')
+    const formHeader = document.createElement('legend');
+    formHeader.textContent = 'Contact Us';
+    formElement.appendChild(formHeader);
+
+    const formLabel = ['Name', 'Email', 'Contact', 'Message' ];
+
+    for (let i = 0; i < formLabel.length; i++) {
+
+        const labelField = document.createElement('label');
+        labelField.setAttribute('for', `${formLabel[i]}`);
+        labelField.textContent = formLabel[i];
+
+        let inputField;
+
+        if(formLabel[i] === 'Message') {
+            inputField = document.createElement('textarea');
+            inputField.setAttribute('id', `${formLabel[i]}`);
+        } else {
+            inputField = document.createElement('input');
+            inputField.setAttribute('id', `${formLabel[i]}`);
+            inputField.setAttribute('type', 'text');
+        }
+
+        formElement.appendChild(labelField);
+        formElement.appendChild(inputField);
+
+    };
+
+    const submit = document.createElement('button');
+    submit.className = 'submit';
+    submit.textContent = 'Submit';
+    submit.setAttribute('type', 'button');
+    formElement.appendChild(submit);
+    dialogbox.appendChild(formElement);
+    const contentDiv = document.querySelector('#content');
+    contentDiv.appendChild(dialogbox);
+};
+
+export function formSubmit() {
+    const dialogbox = document.querySelector('dialog');
+    console.log(dialogbox)
+    const contactBtn = document.querySelector('.contactBtn');
+    console.log(contactBtn)
+
+    contactBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (e.target.textContent === 'Contact Us') {
+            dialogbox.showModal();
+        }
+    })
+
+    const close = document.querySelector('.submit');
+    close.addEventListener('click', (e) => {
+        e.preventDefault;
+        if (e.target.textContent === 'Submit') {
+            dialogbox.close();
+        }
+    })
 }

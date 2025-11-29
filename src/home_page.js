@@ -1,5 +1,5 @@
-import { myBgImage1 } from "./imageImport";
-import { svgObject } from "./imageImport";
+// ..........................Home_page....................................
+import { myBgImage1, svgObject } from "./imageImport";
 
 function renderHomePageDetails() {
 
