@@ -53,6 +53,5 @@ function firstRender() {
     })
 }
 
-firstRender()
 
-export { renderHomePageDetails, clearDOM, addSvg }
+export { renderHomePageDetails, clearDOM, addSvg, firstRender }

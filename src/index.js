@@ -2,7 +2,7 @@ import './style.css';
 import './menu.css';
 import './about.css';
 
-import { renderHomePageDetails, addSvg } from './home_page';
+import { renderHomePageDetails, addSvg, firstRender } from './home_page';
 import { renderFoodObject } from './menu';
 import { FoodStore } from './menu';
 import { Employee, renderEmployee } from './about';
@@ -31,5 +31,6 @@ const renderSiteDisplay = () => {
     })  
 }
 
+firstRender();
 renderSiteDisplay();
 
