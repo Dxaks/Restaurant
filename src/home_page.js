@@ -36,14 +36,12 @@ function clearDOM(div) {
 function addSvg(containerPosition, containerName) {
 
     const position = document.querySelector(containerPosition);
-    console.log(containerPosition)
     const element = document.createElement(containerName);
 
     for (let image in svgObject) {
         element.innerHTML += svgObject[image];
     }
     position.appendChild(element);
-    console.log(element)
 }
 
 function firstRender() {
